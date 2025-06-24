@@ -219,6 +219,13 @@ impl<const K: usize, AlphabetType: Alphabet, BitArrayType: BitViewSized + BitSto
     }
 }
 
+#[cfg(feature = "get-size2")]
+impl<const K: usize, AlphabetType: Alphabet, BitArrayType: BitViewSized + BitStore>
+    get_size2::GetSize for BitArrayKmer<K, AlphabetType, BitArrayType>
+{
+    // BitArray is stack-allocated.
+}
+
 #[cfg(feature = "serde")]
 mod serde {
     use bitvec::{array::BitArray, store::BitStore, view::BitViewSized};

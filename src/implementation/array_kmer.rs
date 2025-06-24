@@ -137,6 +137,9 @@ impl<const K: usize, AlphabetType: Alphabet> IndexMut<usize> for ArrayKmer<K, Al
     }
 }
 
+#[cfg(feature = "get-size2")]
+impl<const K: usize, AlphabetType: Alphabet> get_size2::GetSize for ArrayKmer<K, AlphabetType> {}
+
 #[cfg(test)]
 mod tests {
     use traitsequence::interface::Sequence;

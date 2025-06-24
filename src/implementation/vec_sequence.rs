@@ -367,6 +367,16 @@ impl<AlphabetType: Alphabet> From<VectorGenome<AlphabetType>> for Vec<AlphabetTy
     }
 }
 
+#[cfg(feature = "get-size2")]
+impl<AlphabetType: Alphabet> get_size2::GetSize for VectorGenome<AlphabetType> {
+    fn get_heap_size(&self) -> usize {
+        self.vector.capacity() * std::mem::size_of::<AlphabetType::CharacterType>()
+    }
+}
+
+#[cfg(feature = "get-size2")]
+impl<AlphabetType: Alphabet> get_size2::GetSize for &SliceSubGenome<AlphabetType> {}
+
 #[cfg(test)]
 mod tests {
     use crate::implementation::alphabets::dna_alphabet::DnaAlphabet;

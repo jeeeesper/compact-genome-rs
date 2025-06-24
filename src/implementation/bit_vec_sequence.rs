@@ -514,6 +514,13 @@ impl<AlphabetType: Alphabet, BitStoreType: BitStore> Hash
     }
 }
 
+#[cfg(feature = "get-size2")]
+impl<AlphabetType: Alphabet> get_size2::GetSize for BitVectorGenome<AlphabetType> {
+    fn get_heap_size(&self) -> usize {
+        self.bits.capacity() / 8
+    }
+}
+
 pub(crate) const fn alphabet_character_bit_width(size: u8) -> usize {
     mem::size_of::<u8>() * 8 - ((size - 1).leading_zeros() as usize)
 }

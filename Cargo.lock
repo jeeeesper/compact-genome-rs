@@ -45,6 +45,7 @@ dependencies = [
  "bitvec",
  "enum-iterator",
  "flate2",
+ "get-size2",
  "itertools",
  "lazy_static",
  "rand",
@@ -104,6 +105,12 @@ name = "funty"
 version = "2.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e6d5a32815ae3f33302d95fdcb2ce17862f8c65363dcfd29360480ba1001fc9c"
+
+[[package]]
+name = "get-size2"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "414adb79ae400f95c20f60c851e9ae53d9043ec6e8cc4afa85e20b74874249e5"
 
 [[package]]
 name = "getrandom"
